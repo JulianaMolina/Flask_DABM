@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso al Sistema</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='estilos.css') }}">
+
+    <script>
+        function boton(){
+            usuario = document.getElementById("usuario").value;
+            //alert(usuario);
+            password = document.getElementById("password").value;
+            //alert(password);
+            if ((usuario == "")|| (password=="")){
+                alert("Ingrese todos los valores");
+            }
+            else{
+                document.getElementById("formLogin").submit();
+            }
+        }
+    </script>
+</head>
+<body style="background-image: url('/static/fondo.jpg');">
+    <div id="login">
+        <form action="/validar" method="post" id="formLogin">
+            <img alt="Logo Escuela" height="147" src="https://escuelaing.s3.amazonaws.com/staging/images/logo-ecijg.width-380.png?AWSAccessKeyId=AKIAWFY3NGTFBJGCIWME&amp;Signature=PqBSl4XBVzvut%2B0TPZ20fTdcRa0%3D&amp;Expires=1636469363" width="380">
+            
+            <p class="parrafo">Usuario : <input type="text" name="usuario" id="usuario"></p>
+            <p class="parrafo">Contraseña: <input type="password" name="password" id="password"></p>
+            <p><input type="button" class="boton" value="Ingresar" onclick="boton()"></p>
+        </form>
+    </div>
+</body>
+</html>

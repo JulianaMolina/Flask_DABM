@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        #menu{
+            width:500px;
+            position: absolute;
+            left: 30%;
+            top: 10%;
+            box-shadow: 5pX 5px 5px black;
+        }
+        
+    </style>
+    <script>
+        function config(){
+            window.open('/config','_parent')
+        }
+        function monitor(){
+            window.open('/monitor','_parent')
+        }
+    </script>
+</head>
+<body style="background-image: url('/static/fondo.jpg');"> 
+    <div class="card" id="menu">
+        <div class="card-header">Menu Principal</div>
+        <div class="card-body">
+            <button type="button" class="btn btn-primary" onclick="config()">Configuración</button>
+            <button type="button" class="btn btn-success" onclick="monitor()">Monitor</button>
+        </div>
+        <div class="card-footer">DABM 2021</div>
+      </div>
+</body>
+</html>

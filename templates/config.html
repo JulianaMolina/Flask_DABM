@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Parámetros</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function Guardar(){
+            minH = document.getElementById("minH");
+            maxH = document.getElementById("maxH");
+            minN = document.getElementById("minN");
+            maxN = document.getElementById("maxN");
+            minF = document.getElementById("minF");
+            maxF = document.getElementById("maxF");
+            
+            if ((minH=="")||(maxH=="")||(minN=="")||(maxN=="")||(minF=="")||(maxF=="")){
+                alert("Ingrese todos los valores");
+            }
+            else{
+                document.getElementById("formRangos").submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><h4>PARÁMETROS DE CONFIGURACIÓN</h4></p>
+    <br>
+    <p>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Rango</th>
+            <th>Mínimo</th>
+            <th>Máximo</th>
+          </tr>
+        </thead>
+        <tbody>
+            <form action="/guardar" method="post" id="formRangos">    
+              <tr class="table-primary">
+                <td>Hipotermia</td>
+                <td ><input type="number" name="minH"></td>
+                <td><input type="number" name="maxH"></td>
+              </tr>
+              <tr class="table-success">
+                <td>Normal</td>
+                <td><input type="number" name="minN"></td>
+                <td><input type="number" name="maxN"></td>
+              </tr>
+              <tr class="table-danger">
+                <td>Fiebre</td>
+                <td><input type="number" name="minF"></td>
+                <td><input type="number" name="maxF"></td>
+              </tr>
+            </form>
+        </tbody>
+      </table>
+    </p>
+    <p><button type="button" class="btn btn-primary" onclick="Guardar()">GUARDAR</button></p>
+</body>
+</html>
